@@ -40,7 +40,7 @@ body:has(.register-wrapper) {
         gap: 13px;
         align-items: center;
         margin-bottom: 42px;
-        input[type='text'], input[type='email'] {
+        input[type='text'], input[type='email'],input[type='number'] {
             width: 400px;
             text-align: center;
             color: white;

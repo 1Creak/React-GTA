@@ -4,10 +4,10 @@ import {createSlice} from '@reduxjs/toolkit'
 const initialState = {
     users: [
         {
-            'name': 'Eugene',
-            'last-name': 'Skrypnyk',
-            'age': 22,
-            'email': 'test@gmail.com',
+            name: 'Eugene',
+            lastName: 'Skrypnyk',
+            age: 22,
+            email: 'test@gmail.com',
 
         },
     ]
@@ -18,7 +18,13 @@ const registerUserSlice = createSlice({
     initialState,
     reducers: {
         addNewUser(state, action) {
-            state.push(action.payload);
+            const existingUser = state.users.some(user => user.email === action.payload.email);
+            if (existingUser) {
+                console.log('Пользователь с таким email уже существует!');
+                return;
+            }
+            state.users.push(action.payload);
+            console.log(JSON.stringify(state.users,null,2));
         },
     },
 })
