@@ -20,7 +20,7 @@ const registerUserSlice = createSlice({
         addNewUser(state, action) {
             const existingUser = state.users.some(user => user.email === action.payload.email);
             if (existingUser) {
-                console.log('Пользователь с таким email уже существует!');
+                alert('Пользователь с таким email уже существует!');
                 return;
             }
             state.users.push(action.payload);
