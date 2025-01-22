@@ -50,11 +50,14 @@ const registerUserSlice = createSlice({
             state.currentUser = user;
             console.log(JSON.stringify(state.currentUser,null,2));
             state.error = null;
+        },
+        exit(state){
+            state.currentUser = null;
         }
 
     },
 })
 
 
-export const {addNewUser, clearError, emptyField, login} = registerUserSlice.actions
+export const {addNewUser, clearError, emptyField, login, exit} = registerUserSlice.actions
 export default registerUserSlice.reducer

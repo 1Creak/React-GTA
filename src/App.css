@@ -4,16 +4,10 @@
   padding: 50px;
   text-align: center;
 }
-.navigation{
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   a{
     color: white;
     margin: 10px;
   }
-}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -50,7 +44,7 @@
   color: #888;
 }
 
-input[type='submit']{
+input[type='submit'], .btn{
   background-color: #FCA311;
   border-radius: 7px;
   padding:11px 50px;
