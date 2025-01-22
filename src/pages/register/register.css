@@ -5,10 +5,31 @@ body:has(.register-wrapper) {
     background-repeat: no-repeat;
 }
 
+.register-component{
+    width: max-content;
+    margin: 0 auto;
+}
 .register-header {
     position: relative;
 }
-
+.register-body-title{
+    gap: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.register-body-circles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.register-body-circle{
+    width: 4.5px;
+    height: 4.5px;
+    border-radius: 100px;
+    background-color: #FF6F06;
+}
 .register-header::after {
     content: '';
     display: block;
@@ -75,4 +96,40 @@ body:has(.register-wrapper) {
             left: -70px;
         }
     }
+}
+.register-error-block{
+    background-color: #131011;
+    color: white;
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 50px;
+    p{
+        margin: 0;
+        text-align: start;
+    }
+}
+.register-error-block span{
+    color:#FF5353;
+}
+.register-error-block .time-duration{
+    color: #FFFFFF1F;
+}
+.register-error-block .register-error-icon-wrapper .register-error-icon{
+
+}
+.register-error-block .register-error-block-header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.register-error-icon-wrapper{
+    border-radius: 100px;
+    border: 2px solid #FF5353;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

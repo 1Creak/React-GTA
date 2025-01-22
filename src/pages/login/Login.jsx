@@ -1,7 +1,7 @@
-import './register.css';
+import './Login.css';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {addNewUser, clearError, emptyField} from '../../features/registerUser/registerUser.js';
+import {login, emptyField, clearError} from '../../features/registerUser/registerUser.js';
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -9,8 +9,6 @@ const Register = () => {
 
     const [formData, setFormData] = useState({
         firstName: '',
-        lastName: '',
-        age: '',
         email: '',
     });
 
@@ -24,22 +22,17 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!formData.firstName || !formData.lastName || !formData.age || !formData.email ){
+        dispatch(login({
+            name: formData.firstName,
+            email: formData.email,
+        }));
+        if(!formData.firstName || !formData.email ){
             dispatch(emptyField());
             return;
         }
 
-        dispatch(addNewUser({
-            name: formData.firstName,
-            lastName: formData.lastName,
-            age: formData.age,
-            email: formData.email,
-        }))
-
         setFormData({
             firstName: '',
-            lastName: '',
-            age: '',
             email: '',
         })
     }
@@ -59,7 +52,7 @@ const Register = () => {
                             <div className='register-body-circle'></div>
                         </div>
 
-                        <h2>РЕГИСТРАЦИЯ</h2>
+                        <h2>LogIn</h2>
 
                         <div className='register-body-circles'>
                             <div className='register-body-circle'></div>
@@ -74,21 +67,17 @@ const Register = () => {
                         <div className='register-body-fields'>
                             <input onChange={handleChange} value={formData.firstName} type='text' name='firstName'
                                    placeholder='First name'/>
-                            <input onChange={handleChange} value={formData.lastName} type='text' name='lastName'
-                                   placeholder='Last name'/>
-                            <input onChange={handleChange} value={formData.age} type='number' name='age'
-                                   placeholder='Age'/>
                             <input onChange={handleChange} value={formData.email} type='email' name='email'
                                    placeholder='Email'/>
                         </div>
                         <div className='register-body-submit'>
                             <img width='18' src='/img/left-arrow-svgrepo-com.svg'/>
-                            <input type='submit' value='Создать аккаунт'/>
+                            <input type='submit' value='Войти'/>
                         </div>
                     </form>
 
                     <div>
-                        <a href='/login'>У меня уже есть аккаунт</a>
+                        <a href='/register'>У меня еще нет аккаунта</a>
                     </div>
                 </div>
             </div>

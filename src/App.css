@@ -59,4 +59,21 @@ input[type='submit']{
   border: none;
   cursor: pointer;
   font-weight: 700;
+  transition: .3s;
+}
+input[type='submit']:hover{
+  background-color: #b4750c;
+  transition: .3s;
+}
+.circle{
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 100px;
+}
+.bg-white{
+  background-color: white;
+}
+a{
+  color: white;
+  font-size: 12px;
 }
