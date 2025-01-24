@@ -2,10 +2,12 @@ import './Login.css';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {login, emptyField, clearError} from '../../features/registerUser/registerUser.js';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const dispatch = useDispatch();
     const error = useSelector(state => state.registerUser.error);
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -30,11 +32,11 @@ const Register = () => {
             dispatch(emptyField());
             return;
         }
-
-        setFormData({
-            firstName: '',
-            email: '',
-        })
+        navigate('/choose-account');
+        // setFormData({
+        //     firstName: '',
+        //     email: '',
+        // })
     }
 
     return (

@@ -8,7 +8,32 @@ const initialState = {
             lastName: 'Skrypnyk',
             age: 22,
             email: 'test@gmail.com',
-
+            accounts: [
+                {
+                    vip: false,
+                    nickname: 'Dunevi Recelline',
+                    status: true,
+                    fraction: 'FBI',
+                    job: 'admin',
+                    money: 3400000,
+                },
+                {
+                    vip: false,
+                    nickname: 'Dunevi Recelline',
+                    status: false,
+                    fraction: 'FBI',
+                    job: 'admin',
+                    money: 3400000,
+                },
+                {
+                    vip: true,
+                    nickname: 'Dunevi Recelline',
+                    status: true,
+                    fraction: 'FBI',
+                    job: 'admin',
+                    money: 3400000,
+                },
+            ],
         },
     ],
     currentUser: null,

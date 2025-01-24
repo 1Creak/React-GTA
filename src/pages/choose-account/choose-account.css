@@ -1,0 +1,87 @@
+body:has(.choose-account) {
+    background-image: url("../../assets/bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+p{
+    font-family: Proxima Nova,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.05px;
+
+}
+.choose-account-header{
+    position: relative;
+}
+.choose-account-header img{
+    width: 100%;
+}
+.choose-account-header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #151213, #14101175);
+    img{
+        width: 100%;
+    }
+}
+.account-info-wrapper{
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    justify-content: space-between;
+}
+.account-info-wrapper p{
+    font-size: 14px;
+    text-align: start;
+}
+.account-error p{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px;
+    span{
+        color:#FCA311;
+    }
+}
+.account-info-item p:first-child{
+    color: #FFFFFF33;
+}
+.account-info-item p:last-child{
+    color: #FCA311;
+}
+.account-info-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    background-color: #0B0708;
+    margin: 10px 60px;
+    span{
+        color: #FCA311;
+    }
+}
+.account-info{
+    background-color: #110D0E;
+}
+.circle-orange{
+    background-color: #FF6F06;
+}
+.circle-green{
+    background-color: #5CFF6D;
+}
+.circle-green, .circle-orange{
+    width: 4.5px;
+    height: 4.5px;
+    border-radius: 100px;
+}
+.choose-account-type{
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}

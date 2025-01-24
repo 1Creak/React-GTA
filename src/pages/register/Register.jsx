@@ -2,10 +2,12 @@ import './register.css';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {addNewUser, clearError, emptyField} from '../../features/registerUser/registerUser.js';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const dispatch = useDispatch();
     const error = useSelector(state => state.registerUser.error);
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -36,18 +38,20 @@ const Register = () => {
             email: formData.email,
         }))
 
-        setFormData({
-            firstName: '',
-            lastName: '',
-            age: '',
-            email: '',
-        })
+        navigate('/choose-account');
+
+        // setFormData({
+        //     firstName: '',
+        //     lastName: '',
+        //     age: '',
+        //     email: '',
+        // })
     }
 
     return (
         <div className='register-component'>
-            <div className='register-wrapper'>
-                <div className='register-header'>
+            <div className='register-wrapper '>
+                <div className='choose-account-header'>
                     <img src='/img/grayman.png'/>
                 </div>
                 <div className='register-body'>

@@ -5,12 +5,13 @@ import Home from './pages/Home.jsx';
 import About from './pages/register/Register.jsx';
 import Login from './pages/login/Login.jsx';
 import UserInfo from "./components/userInfo/UserInfo.jsx";
+import ChooseAccount from "./pages/choose-account/choose-account.jsx";
 
 function Navigation() {
     const location = useLocation();
     return (
         <header>
-            {location.pathname !== '/home' && <UserInfo />}
+            {(location.pathname !=='/' && location.pathname !== '/login') ? <UserInfo /> : null}
             <nav className='navigation'>
                 <Link to="/register">Go to Register Page</Link> |
                 <Link to="/login">Go to Login Page</Link> |
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<About />} />
+                <Route path="/choose-account" element={<ChooseAccount />} />
             </Routes>
         </Router>
     );
