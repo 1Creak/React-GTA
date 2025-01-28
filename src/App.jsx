@@ -13,7 +13,7 @@ function Navigation() {
     const location = useLocation();
 
     useEffect(() =>{
-        getPosts.then(res=>console.log(res)).catch(err => console.log(err));
+        // getPosts.then(res=>console.log(res)).catch(err => console.log(err));
     },[])
     return (
         <header>

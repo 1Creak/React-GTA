@@ -1,13 +1,24 @@
 import './register.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {addNewUser, clearError, emptyField} from '../../features/registerUser/registerUser.js';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Register = () => {
     const dispatch = useDispatch();
     const error = useSelector(state => state.registerUser.error);
+    const currentUser = useSelector(state => state.registerUser.currentUser);
     const navigate = useNavigate();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        if (isSubmitting && error === null) {
+            navigate('/choose-account');
+        }
+        if (error) {
+            setIsSubmitting(false);
+        }
+    }, [error, isSubmitting]);
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -26,7 +37,7 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!formData.firstName || !formData.lastName || !formData.age || !formData.email ){
+        if (!formData.firstName || !formData.lastName || !formData.age || !formData.email) {
             dispatch(emptyField());
             return;
         }
@@ -38,14 +49,7 @@ const Register = () => {
             email: formData.email,
         }))
 
-        navigate('/choose-account');
-
-        // setFormData({
-        //     firstName: '',
-        //     lastName: '',
-        //     age: '',
-        //     email: '',
-        // })
+        setIsSubmitting(true);
     }
 
     return (

@@ -52,7 +52,7 @@ const registerUserSlice = createSlice({
             }
             state.error = null;
             state.users.push(action.payload);
-            console.log(JSON.stringify(state.users, null, 2));
+            state.currentUser =  action.payload;
         },
         emptyField(state) {
             state.error = 'Заполните поля';
@@ -62,7 +62,7 @@ const registerUserSlice = createSlice({
         },
         login(state, action) {
             const user = state.users.find(user => user.email === action.payload.email);
-            console.log(JSON.stringify(user, null, 2));
+            // console.log(JSON.stringify(user, null, 2));
             if (!user) {
                 state.error = 'Email not found';
                 return;
@@ -73,7 +73,7 @@ const registerUserSlice = createSlice({
                 return;
             }
             state.currentUser = user;
-            console.log(JSON.stringify(state.currentUser,null,2));
+            // console.log(JSON.stringify(state.currentUser,null,2));
             state.error = null;
         },
         exit(state){

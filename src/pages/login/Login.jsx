@@ -1,5 +1,5 @@
 import './Login.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {login, emptyField, clearError} from '../../features/registerUser/registerUser.js';
 import { useNavigate } from 'react-router-dom';
@@ -8,12 +8,20 @@ const Register = () => {
     const dispatch = useDispatch();
     const error = useSelector(state => state.registerUser.error);
     const navigate = useNavigate();
+    const [isSubmitting, setIsSubmitting] =  useState(false);
 
     const [formData, setFormData] = useState({
         firstName: '',
         email: '',
     });
-
+    useEffect(() =>{
+        if (isSubmitting && error === null) {
+            navigate('/choose-account');
+        }
+        if (error) {
+            setIsSubmitting(false);
+        }
+    }, [isSubmitting]);
     const handleChange = (e) => {
         const {name, value} = e.target;
         setFormData((prev) => ({
@@ -28,11 +36,12 @@ const Register = () => {
             name: formData.firstName,
             email: formData.email,
         }));
+        setIsSubmitting(true);
+
         if(!formData.firstName || !formData.email ){
             dispatch(emptyField());
-            return;
         }
-        navigate('/choose-account');
+        // navigate('/choose-account');
         // setFormData({
         //     firstName: '',
         //     email: '',
