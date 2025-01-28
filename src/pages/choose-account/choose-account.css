@@ -85,3 +85,14 @@ p{
     gap: 10px;
     align-items: center;
 }
+.account-info-wrapper button:hover{
+    background-color: #FCA311;
+    border: none;
+    color: black;
+    transition: .3s;
+}
+.account-info-wrapper button{
+    transition: .3s;
+    border: none;
+    margin-bottom: 20px;
+}

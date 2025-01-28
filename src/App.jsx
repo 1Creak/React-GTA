@@ -6,6 +6,7 @@ import About from './pages/register/Register.jsx';
 import Login from './pages/login/Login.jsx';
 import UserInfo from "./components/userInfo/UserInfo.jsx";
 import ChooseAccount from "./pages/choose-account/choose-account.jsx";
+import SingleAccount from "./pages/single-account/Single-account.jsx"
 import { getPosts } from "./api/request.js";
 
 function Navigation() {
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<About />} />
                 <Route path="/choose-account" element={<ChooseAccount />} />
+                <Route path="/single-account" element={<SingleAccount />} />
             </Routes>
         </Router>
     );
