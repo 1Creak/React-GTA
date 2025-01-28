@@ -2,12 +2,13 @@ import './choose-account.css';
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const ChooseAccount = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const currentUser = useSelector(state => state.registerUser.currentUser);
-    console.log(currentUser);
+    // console.log(currentUser);
     let color = '';
 
     const handleSelectAccount = () =>{
@@ -68,7 +69,10 @@ const ChooseAccount = () => {
                                         <p>Общий баланс</p>
                                         <p>{account.money}$</p>
                                     </div>
-                                    <button onClick={handleSelectAccount}>Select</button>
+                                    {/*<button onClick={handleSelectAccount}>Select</button>*/}
+                                    <Link to={`/single-account/${account.nickname}`}>
+                                        <button>Select</button>
+                                    </Link>
                                 </div>
                             ))
                         ) : (

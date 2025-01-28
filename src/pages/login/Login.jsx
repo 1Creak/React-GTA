@@ -41,11 +41,7 @@ const Register = () => {
         if(!formData.firstName || !formData.email ){
             dispatch(emptyField());
         }
-        // navigate('/choose-account');
-        // setFormData({
-        //     firstName: '',
-        //     email: '',
-        // })
+
     }
 
     return (

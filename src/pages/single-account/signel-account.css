@@ -1,0 +1,18 @@
+.single-account{
+    margin-top: 50px;
+    background-color: #110D0E;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    .account-info{
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h1{
+            margin: 0;
+        }
+    }
+}

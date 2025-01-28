@@ -11,7 +11,7 @@ const initialState = {
             accounts: [
                 {
                     vip: false,
-                    nickname: 'Dunevi Recelline',
+                    nickname: 'Dunevi Recelline 1',
                     status: true,
                     fraction: 'FBI',
                     job: 'admin',
@@ -19,7 +19,7 @@ const initialState = {
                 },
                 {
                     vip: false,
-                    nickname: 'Dunevi Recelline',
+                    nickname: 'Dunevi Recelline 2',
                     status: false,
                     fraction: 'FBI',
                     job: 'admin',
@@ -27,7 +27,7 @@ const initialState = {
                 },
                 {
                     vip: true,
-                    nickname: 'Dunevi Recelline',
+                    nickname: 'Dunevi Recelline 3',
                     status: true,
                     fraction: 'FBI',
                     job: 'admin',
