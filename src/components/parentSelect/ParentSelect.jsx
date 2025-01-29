@@ -30,7 +30,7 @@ function ParentSelect(){
         <>
             <div>
                 <h2>Mother</h2>
-                <img src={characterParentsList[motherID].image} alt='Mother' />
+                <img width='120' height='140' src={characterParentsList[motherID].image} alt='Mother' />
                 <Box>
                     <Button onClick={() => {handlerLeft('mother')}}>
                         Left
@@ -44,7 +44,7 @@ function ParentSelect(){
 
             <div>
                 <h2>Father</h2>
-                <img src={characterParentsList[fatherID].image} alt='Father' />
+                <img width='120' height='140' src={characterParentsList[fatherID].image} alt='Father' />
                 <Box>
                     <Button onClick={() => {handlerLeft('')}}>
                         Left

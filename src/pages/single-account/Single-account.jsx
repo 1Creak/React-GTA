@@ -31,8 +31,11 @@ const AccountDetail = ({ users }) => {
 
             <Box sx={styles.sliderWrapper}>
 
-                <div>
-                    <ParentSelect />
+                <Box>
+                    <Box sx={styles.parentWrapper}>
+                        <ParentSelect />
+                    </Box>
+
                     <div>
                         <p>Similarity</p>
                         <Slider sx={styles.chooseParent} defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} max={10}/>
@@ -41,7 +44,7 @@ const AccountDetail = ({ users }) => {
                         <p>Skin tone</p>
                         <Slider sx={styles.chooseParent} defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} max={10}/>
                     </div>
-                </div>
+                </Box>
 
 
 
@@ -71,6 +74,10 @@ const styles = {
     sliderWrapper :{
         display: 'flex',
         gap: '100px',
+    },
+    parentWrapper :{
+        display: 'flex',
+        gap: '50px'
     }
 }
 export default AccountDetail;
