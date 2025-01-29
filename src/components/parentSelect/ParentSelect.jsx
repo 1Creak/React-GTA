@@ -1,19 +1,44 @@
-import React, {useEffect, useState} from 'react';
+import React from "react";
+import {Button, Box} from "@mui/material";
+import { useSelector, useDispatch} from "react-redux";
+import characterParents from "../../features/characterParents/characterParents.jsx";
+import { characterParentsList } from "../../assets/data/characterParentsList.js"
 
 function ParentSelect(){
-    const ACCESS_KEY = "R7Sr9KqUa5eBGbS2IMTSNZNdP74rFmAHzig-sh08_r4";
-    const [imageUrl, setImageUrl] = useState("");
-
-    useEffect(() => {
-        fetch(`https://api.unsplash.com/photos/random?client_id=${ACCESS_KEY}`)
-            .then((response) => response.json())
-            .then((data) => setImageUrl(data.urls.regular))
-            .catch((error) => console.error("Ошибка:", error));
-    }, []);
-
+    console.log(characterParentsList[1]);
+    const motherID = useSelector(state => state.characterParentsList.motherId);
+    const fatherID = useSelector(state => state.characterParentsList.fatherId);
+    console.log(characterParentsList[motherID].image);
     return(
         <>
-            {imageUrl && <img src={imageUrl} alt="Unsplash Random" style={{ width: "500px" }} />}
+            <div>
+                <h2>Mother</h2>
+                <img src={characterParentsList[motherID].image} alt='Mother' />
+                <Box>
+                    <Button>
+                        Left
+                    </Button>
+
+                    <Button>
+                        Right
+                    </Button>
+                </Box>
+            </div>
+
+            <div>
+                <h2>Father</h2>
+                <img src={characterParentsList[fatherID].image} alt='Father' />
+                <Box>
+                    <Button>
+                        Left
+                    </Button>
+
+                    <Button>
+                        Right
+                    </Button>
+                </Box>
+
+            </div>
         </>
     )
 }

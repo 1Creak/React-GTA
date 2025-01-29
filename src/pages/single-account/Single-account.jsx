@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import './signel-account.css';
 import { Box, Slider, useMediaQuery } from '@mui/material';
+import ParentSelect from '../../components/parentSelect/ParentSelect.jsx'
 
 const AccountDetail = ({ users }) => {
     const currentUser = useSelector(state => state.registerUser.currentUser);
@@ -29,16 +30,9 @@ const AccountDetail = ({ users }) => {
             </Box>
 
             <Box sx={styles.sliderWrapper}>
-                <div>
-                    <h2>Mother</h2>
-
-                </div>
 
                 <div>
-                    <h2>Father</h2>
-
-                </div>
-                <div>
+                    <ParentSelect />
                     <div>
                         <p>Similarity</p>
                         <Slider sx={styles.chooseParent} defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} max={10}/>
