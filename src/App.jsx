@@ -10,6 +10,7 @@ import ChooseAccount from "./pages/choose-account/choose-account.jsx";
 import SingleAccount from "./pages/single-account/Single-account.jsx"
 
 
+
 function Navigation() {
 
     const location = useLocation();
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/single-account/:nickname" element={<SingleAccount users={users} />} />
 
             </Routes>
+
         </Router>
     );
 }
